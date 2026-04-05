@@ -1,0 +1,8 @@
+#!/data/data/com.termux/files/usr/bin/bash
+GREEN='\033[0;32m'
+NC='\033[0m'
+echo -n "IP Address: "
+read ip
+echo -e "${GREEN}[*] Locating $ip...${NC}"
+curl -s "ip-api.com/line/$ip?fields=status,message,country,city,isp"
+

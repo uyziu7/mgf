@@ -1,0 +1,14 @@
+{
+  "name": "mgf",
+  "version": "2026.1",
+  "arch": "all",
+  "maintainer": "uyziu7",
+  "description": "Magasploit Framework",
+  "depends": ["bash", "curl"],
+  "data_files": {
+    "data": {
+      "destination": "/"
+    }
+  }
+}
+

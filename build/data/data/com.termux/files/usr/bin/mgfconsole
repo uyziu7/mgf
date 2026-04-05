@@ -1,0 +1,40 @@
+#!/data/data/com.termux/files/usr/bin/bash
+RED='\033[0;31m'
+NC='\033[0m'
+SELECTED_MODULE=""
+
+show_banner() {
+    echo -e "${RED}__  ___                 ______"
+    echo -e "/  |/  /___ _____ ______/ ____/____  ____ _____ ___  ___ _      ______  ____  / /__"
+    echo -e "/ /|_/ / __ \`/ __ \`/ __  / /_  / ___/ __ \`/ __ \`__ \/ _ \ | /| / / __ \/ ___/ / //_/"
+    echo -e "/ /  / / /_/ / /_/ / /_/ / __/ / /  / /_/ / / / / / /  __/ |/ |/ / /_/ / /  / ,<"
+    echo -e "/_/  /_/\__,_/\__, /\__,_/_/   /_/   \__,_/_/ /_/ /_/\___/|__/|__/\____/_/  /_/|_|"
+    echo -e "               /____/                                           Magasploit${NC}\n"
+}
+
+show_banner
+while true; do
+    if [ -z "$SELECTED_MODULE" ]; then
+        echo -n -e "mgf > "
+    else
+        echo -n -e "mgf (${RED}$SELECTED_MODULE${NC}) > "
+    fi
+    
+    read -r cmd args
+    case $cmd in
+        use) SELECTED_MODULE=$args ;;
+        run|exploit)
+            case $SELECTED_MODULE in
+                portscan) mgfportscan ;;
+                dnslookup) mgfdns ;;
+                whois) mgfwhois ;;
+                iptracker) mgfiptrack ;;
+                spider) mgfspider ;;
+                *) echo "No module selected or invalid module." ;;
+            esac ;;
+        back) SELECTED_MODULE="" ;;
+        exit|quit) exit 0 ;;
+        *) $cmd $args 2>/dev/null || echo "Unknown command: $cmd" ;;
+    esac
+done
+

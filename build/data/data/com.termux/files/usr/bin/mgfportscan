@@ -1,0 +1,10 @@
+#!/data/data/com.termux/files/usr/bin/bash
+GREEN='\033[0;32m'
+NC='\033[0m'
+echo -n "Target IP/Host: "
+read target
+echo -e "${GREEN}[*] Scanning top ports on $target...${NC}"
+for port in 21 22 23 25 53 80 110 139 443 445 3306 3389 8080; do
+  (echo >/dev/tcp/$target/$port) >/dev/null 2>&1 && echo -e "${GREEN}[+] Port $port is OPEN${NC}"
+done
+

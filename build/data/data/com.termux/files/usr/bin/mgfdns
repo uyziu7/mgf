@@ -1,0 +1,8 @@
+#!/data/data/com.termux/files/usr/bin/bash
+GREEN='\033[0;32m'
+NC='\033[0m'
+echo -n "Domain: "
+read domain
+echo -e "${GREEN}[*] DNS Records for $domain:${NC}"
+curl -s "https://dns.google/resolve?name=$domain" | grep -Po '"data":"\K[^"]*'
+

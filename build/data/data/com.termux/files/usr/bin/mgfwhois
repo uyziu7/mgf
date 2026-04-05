@@ -1,0 +1,8 @@
+#!/data/data/com.termux/files/usr/bin/bash
+GREEN='\033[0;32m'
+NC='\033[0m'
+echo -n "Target: "
+read target
+echo -e "${GREEN}[*] Fetching Whois data...${NC}"
+curl -s "https://api.hackertarget.com/whois/?q=$target"
+

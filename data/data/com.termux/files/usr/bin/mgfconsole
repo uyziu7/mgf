@@ -1,0 +1,38 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+# Colors
+RED='\033[0;31m'
+WHITE='\033[1;37m'
+NC='\033[0m'
+
+clear
+echo -e "${RED}"
+echo "    __  ___                 ______                                           "
+echo "   /  |/  /___ _____ ______/ ____/____  ____ _____ ___  ___ _      ______  ____  / /__ "
+echo "  / /|_/ / __ \`/ __ \`/ __  / /_  / ___/ __ \`/ __ \`__ \/ _ \ | /| / / __ \/ ___/ / //_/"
+echo " / /  / / /_/ / /_/ / /_/ / __/ / /  / /_/ / / / / / /  __/ |/ |/ / /_/ / /  / ,<   "
+echo "/_/  /_/\__,_/\__, /\__,_/_/   /_/   \__,_/_/ /_/ /_/\___/|__/|__/\____/_/  /_/|_|  "
+echo "             /____/                                                                  "
+echo -e "${WHITE}           Magasploit${NC}"
+echo ""
+
+while true; do
+    read -p "mgf > " cmd
+    case "$cmd" in
+        "help")
+            echo -e "\nCommands:"
+            echo "  spider - Run Magasploit Spider"
+            echo "  exit   - Close console\n"
+            ;;
+        "spider")
+            mgfspider
+            ;;
+        "exit")
+            exit 0
+            ;;
+        *)
+            if [ ! -z "$cmd" ]; then echo "Unknown: $cmd"; fi
+            ;;
+    esac
+done
+
