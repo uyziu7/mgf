@@ -13,10 +13,13 @@ magasploit is a lightweight reconnaissance and exploitation framework designed s
 Copy and paste this command into your Termux terminal:
 
 ```bash
-curl -sL [https://raw.githubusercontent.com/uyziu7/mgf/main/install.sh](https://raw.githubusercontent.com/uyziu7/mgf/main/install.sh) | bash
+curl -sL https://raw.githubusercontent.com/uyziu7/mgf/main/install.sh | bash
 ```
 # How to use
 ​Launch the console: mgfconsole
 ​Select a module: use portscan
 ​Execute: run
 ​Go back: back
+
+# Warning
+Only for educational purpose, source code in the folders build and data
