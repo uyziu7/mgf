@@ -8,6 +8,7 @@ magasploit is a lightweight reconnaissance and exploitation framework designed s
 * **dnslookup**: Fetch DNS records via Google API.
 * **whois**: Domain ownership information.
 * **iptracker**: Real-time IP geolocation.
+* **scrap**: Scrap file or url and extract email, ip, links.
 
 ## Quick Installation
 Copy and paste this command into your Termux terminal:

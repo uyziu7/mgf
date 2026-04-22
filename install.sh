@@ -9,14 +9,14 @@ pkg update -y && pkg upgrade -y
 echo "[*] Installing dependencies..."
 pkg install wget dpkg -y
 
-echo "[*] Downloading Magasploit v2026.1..."
-wget https://github.com/uyziu7/mgf/raw/main/mgf_2026.1_all.deb
+echo "[*] Downloading Magasploit v2026.2..."
+wget https://github.com/uyziu7/mgf/raw/main/mgf_2026.2_all.deb
 
 echo "[*] Installing Magasploit (mgf)..."
-dpkg -i --force-all ./mgf_2026.1_all.deb
+dpkg -i --force-all ./mgf_2026.2_all.deb
 
 echo "[*] Cleaning up..."
-rm mgf_2026.1_all.deb
+rm mgf_2026.2_all.deb
 
 echo -e "\n[+] Magasploit installed successfully!"
 echo "[+] Type 'mgfconsole' to start."

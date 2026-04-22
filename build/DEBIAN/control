@@ -1,6 +1,6 @@
 Package: mgf
-Version: 2026.1
+Version: 2026.2
 Architecture: all
 Maintainer: uyziu7
 Description: Magasploit Framework
-Depends: bash, curl
+Depends: bash, curl, grep

@@ -30,6 +30,7 @@ while true; do
                 whois) mgfwhois ;;
                 iptracker) mgfiptrack ;;
                 spider) mgfspider ;;
+		scrap) mgfscrap ;;
                 *) echo "No module selected or invalid module." ;;
             esac ;;
         back) SELECTED_MODULE="" ;;
